@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import waypointApp.Model.Waypoint;
 import waypointApp.Repository.WaypointRepository;
 
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -46,9 +47,28 @@ public class WaypointServiceImpl implements WaypointService
 		return null;
 	}
 
+
 	@Override
 	public void deleteWaypoint ( Long id )
 	{
 		waypointRepository.deleteById (id);
+	}
+
+	@Override
+	public Optional <Waypoint> updateWaypointNameAndDescription ( Long id, Map <String, Object> updates )
+	{
+		Optional <Waypoint> optionalWaypoint = waypointRepository.findById (id);
+		if ( optionalWaypoint.isPresent ( ) ) {
+			Waypoint waypoint = optionalWaypoint.get ( );
+			if ( updates.containsKey ("name") ) {
+				waypoint.setName ((String) updates.get ("name"));
+			}
+			if ( updates.containsKey ("description") ) {
+				waypoint.setDescription ((String) updates.get ("description"));
+			}
+			waypointRepository.save (waypoint);
+			return Optional.of (waypoint);
+		}
+		return Optional.empty ( );
 	}
 }

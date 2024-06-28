@@ -8,6 +8,7 @@ import waypointApp.Model.Waypoint;
 import waypointApp.Service.WaypointService;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -51,6 +52,13 @@ public class WaypointController
 			return ResponseEntity.ok (updatedWaypoint);
 		}
 		return ResponseEntity.notFound ( ).build ( );
+	}
+
+	@PatchMapping ("/{id}")
+	public ResponseEntity <Waypoint> updateWaypointNameAndDescription ( @PathVariable Long id, @RequestBody Map <String, Object> updates )
+	{
+		Optional <Waypoint> optionalWaypoint = waypointService.updateWaypointNameAndDescription (id, updates);
+		return optionalWaypoint.map (ResponseEntity::ok).orElseGet (( ) -> ResponseEntity.notFound ( ).build ( ));
 	}
 
 	@DeleteMapping ("/{id}")
