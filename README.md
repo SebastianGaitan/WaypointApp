@@ -110,3 +110,30 @@ spring.jpa.show-sql=true
     "description": "Descripción Actualizada"
     }
 ```
+### Estructura del proyecto
+    src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── example
+    │   │           └── waypointmap
+    │   │               ├── WaypointmapApplication.java
+    │   │               ├── controller
+    │   │               │   └── WaypointController.java
+    │   │               ├── model
+    │   │               │   └── Waypoint.java
+    │   │               ├── repository
+    │   │               │   └── WaypointRepository.java
+    │   │               └── service
+    │   │                   ├── WaypointService.java
+    │   │                   └── impl
+    │   │                       └── WaypointServiceImpl.java
+    │   └── resources
+    │       ├── application.properties
+    └── test
+    └── java
+            └── com
+                └── example
+                    └── waypointmap
+
+
