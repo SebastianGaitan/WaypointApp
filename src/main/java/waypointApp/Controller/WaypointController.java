@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping ("/api/waypoint")
+@CrossOrigin (origins = "http://waypointapp-frontend.s3-website-us-east-1.amazonaws.com")
 public class WaypointController
 {
 	private final WaypointService waypointService;
