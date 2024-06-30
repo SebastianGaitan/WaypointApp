@@ -1,6 +1,6 @@
 # WaypointMap Backend
 
-Este proyecto es la parte del backend de la aplicación WaypointMap, desarrollada con Spring Boot. La aplicación permite a los usuarios crear, leer, actualizar y eliminar waypoints en un mapa, almacenándolos en una base de datos MySQL alojada en AWS RDS.
+Este proyecto es la parte del backend de la aplicación WaypointMap, desarrollada con Spring Boot. La aplicación permite a los usuarios crear, leer, actualizar y eliminar waypoints en un mapa, almacenándolos en una base de datos MySQL alojada en AWS RDS y se esta ejecutando en un EC2 servidor virtual en la nube de AWS.
 
 ## Requisitos
 
