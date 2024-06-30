@@ -77,28 +77,6 @@ spring.jpa.show-sql=true
     }
 ```
 
-    ###Obtener Todos los Waypoints
-    Método: GET
-    URL: /api/waypoints
-
-    Obtener un Waypoint por ID
-    Método: GET
-    URL: /api/waypoints/{id}
-
-    Actualizar un Waypoint
-    Método: PUT
-    URL: /api/waypoints/{id}
-    Body: JSON
-
-```bash
-    {
-    "name": "Nombre Actualizado",
-    "description": "Descripción Actualizada",
-    "latitude": 40.73061,
-    "longitude": -73.935242
-    }
-```
-
     Actualizar Solo Nombre y Descripción de un Waypoint
     Método: PATCH
     URL: /api/waypoints/{id}
